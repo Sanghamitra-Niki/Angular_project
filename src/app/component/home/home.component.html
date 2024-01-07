@@ -1,0 +1,50 @@
+<!-- <div style="width: 40%">
+    <div class="container mt-5">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" formControlName="name" />
+          <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched"class="text-danger">
+            Name is required
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="text" id="email" class="form-control" formControlName="email" />
+          <div *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched">
+            Email is required
+          </div>
+          <div *ngIf= "myForm.get('email')?.hasError('email') && myForm.get('email')?.touched"class="text-danger">
+            please enter a valid email address
+          </div>
+        </div>
+        <button type="button" class="btn btn-primary">submit</button>
+        
+      </form>
+    </div>
+  </div> -->
+  <div style="width: 40%">
+    <div class="container mt-5">
+      <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" id="name" class="form-control" formControlName="name" />
+          <div *ngIf="myForm.get('name')?.hasError('required') && myForm.get('name')?.touched" class="text-danger">
+            Name is required
+          </div>
+        </div>
+        <div class="mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="text" id="email" class="form-control" formControlName="email" />
+          <div *ngIf="myForm.get('email')?.hasError('required') && myForm.get('email')?.touched" class="text-danger">
+            Email is required
+          </div>
+          <div *ngIf="myForm.get('email')?.hasError('email') && myForm.get('email')?.touched" class="text-danger">
+            Please enter a valid email address
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  
